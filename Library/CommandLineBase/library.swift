@@ -13,8 +13,11 @@ private var currentInput: String = "q"
 //private var interactive = Interactive()
 
 class Library{
-    var books: [String] = [String]()
 
+    
+    var booksInLibrary: [String] = [String]()
+    var checkedInBooks: [String] = [String]()
+    var booksCheckedout: [String] = [String]()
         
     func addNewBook()  {
         io.writeMessage("what is the books name")
@@ -22,8 +25,8 @@ class Library{
         let newBook = currentInput
     print("New Book is:\(newBook) ")
     
-        books.append(newBook)
-        
+        booksInLibrary.append(newBook)
+        print("Added\n(newBook) to Library")
         interactive.go()
     }
 
@@ -31,8 +34,9 @@ class Library{
         io.writeMessage("what is Name of book")
         currentInput = io.getInput()
         let checkOutBook = currentInput
-        print("Book Checked Out is:\(checkOutBook) ")
-        
+        print("Book Checked Out is:\n \(checkOutBook)\n it is due back in 5 days")
+        booksCheckedout.append(checkOutBook)
+        print("\n(checkedOutBook) is due back in 5 days")
         interactive.go()
     }
     
@@ -40,25 +44,41 @@ class Library{
         io.writeMessage("what is Name of book")
         currentInput = io.getInput()
         let checkInBook = currentInput
-        print("Book Checked In is:\(checkInBook) ")
+        print("Thank You for checking in:\(checkInBook) ")
+       // checkInBooks.append(checkInBook)
+        print("\(checkInBook) is in ready to be checked out")
+        booksInLibrary.append(checkInBook)
         
            interactive.go()
     }
 
     func LookUpBook()  {
-        io.writeMessage("what is Name of book")
-        currentInput = io.getInput()
-        let lookUpBook = currentInput
-        print("We have:\(lookUpBook) ")
+        //io.writeMessage("what is Name of book")
+        //currentInput = io.getInput()
+        //let lookUpBook = currentInput
+       // print("We have:\(lookUpBook) would you like to check it out")
         
-        books[0...2].contains(lookUpBook)
+       // books[0...2].contains(lookUpBook)
+        for _ in booksInLibrary{
+            print(booksInLibrary)
+          // booksInLibrary.contains(lookUpBook)
+        }
+            //if (){
+           //     booksInLibrary.contains(lookUpBook) == true
+             //   print ("we have\n(lookUpBook)")
+           // }else {
+                
+           // print("sorry we do not have:\n(lookupBook")
+            
+                
+           // }
         
         //print("\n \(books)")
            interactive.go()
     }
 
     func help() {
-        io.writeMessage("look up books type: look up\n check out book: check out\ncheckin book: check in\n add new book: add new\nlookup book: lookup\n help: help\nquit: quit")
+        io.writeMessage("list books type: list books \n check out book: check out\ncheckin book: check in\n add new book: add new\nlookup book: lookup\n help: help\nquit: quit")
         
         interactive.go()
     }

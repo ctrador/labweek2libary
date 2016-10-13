@@ -8,15 +8,18 @@
 
 import Foundation
 
-struct Books {
+  struct Books {
     private let bookName: String
-    private let bookNumber: Int
+   // private let bookNumber: Int
+    //private let checkedOut: Bool
     
-    init(bookName: String, bookNumber: Int) {
+    //checkedOut: Bool
+    
+    init(bookName: String) {
         self.bookName = bookName
-        self.bookNumber = bookNumber
-        
-}
+        //self.bookNumber = bookNumber
+        //self.checkedOut = checkedOut
+ }
 
 
 

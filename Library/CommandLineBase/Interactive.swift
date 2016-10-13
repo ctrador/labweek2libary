@@ -39,7 +39,7 @@ class Interactive {
                 
                library.addNewBook()
                 
-        }else if currentInput == "look up"{
+        }else if currentInput == "list books"{
            
                 library.LookUpBook()
                 
